@@ -1,0 +1,14 @@
+---
+- name: Install and start ngnix
+  hosts: all
+  become: root
+
+  tasks:
+    - name: Install Nginx
+     apt:
+        name: ngnix
+        state: present
+    - name: Start Ngnix
+      service:
+        name: ngnix
+        state: started
